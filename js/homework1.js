@@ -6,18 +6,18 @@ console.log('Hello This is main.js');
 For example, if we have an array [1, 2, 3, 5, 6, 7] then this will return 3 since the array
 at index 3 is 5 which is not consecutive. If every element in the array is consecutive, return -1
 */
+let myArr = [1,2,3,4,5,7];
 
-function firstNonConsecutive(arr){
-    for(let x=0; x<arr.length; x++){
-        if(arr[x] != x+1){
-            return x
-        }
+for (let x =0; x< myArr.length; x++){
+    let number = myArr[x]
+    let numbertoright = myArr[x+1]
+    if (number +1 !== numbertoright){
+        console.log(`Index ${x+1} is first consecutive`)
+        break
     }
-    return -1
-}
-//Call function here with arguments
+};
 
-console.log(firstNonConsecutive([1, 2, 3, 5, 6, 7]))
+
 
 
 //============Exercise #2 ============//
@@ -33,18 +33,14 @@ Output: 26
 
 Note: if there is nothing to sum, the sum is default to 0.
 */
+let newArr= [10, 12, -9, 3, -1, 0, 15];
+let total =  0;
 
-let sumPositives = (arr) => {
-    sum = 0
-    for(let x=0; x<arr.length; x++){
-        if(arr[x] > 0) {
-            sum += arr[x]
-        }
+for (let num of newArr){
+    if (num > 0){
+        total += num
     }
-    return sum
-}
+};
+console.log(total);
 
-// Call function here with arguments
 
-console.log(sumPositives([10, 12, -9, 3, -1, 0, 15]))
-console.log(sumPositives([3, 5, 7, 9, -10, 2, -22, -1]))
